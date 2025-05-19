@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# 🤖 ChatGPT Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **ChatGPT clone** developed with the goal of **improving my fullstack development skills** and also **building my portfolio**. It replicates the interface and some basic funcionalities of ChatGPT, using modern technologies such as **Node.js for the backend** and **React with Vite for the frontend**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto é um **clone do ChatGPT** desenvolvido com o objetivo de **aprimorar meus conhecimentos** em desenvolvimento fullstack e também **compor meu portfólio**. Ele replica a interface e algumas funcionalidades básicas do ChatGPT, utilizando tecnologias modernas como **Node.js no backend** e **React com Vite no frontend**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Technologies
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+### Frontend:
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+### Backend:
+
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [OpenAI API](https://platform.openai.com/docs/)
+- [dotenv](https://www.npmjs.com/package/dotenv) for the environment variables
+
+---
+
+## 🎯 Goals
+
+---
+
+## 🛠 How run the project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/eduardovargasleffa/chatgpt-clone.git
+cd chatgpt-clone
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Run the backend
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+```bash
+cd server
+npm install
+cp .env.example .env
+node --watch src/server
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+### 3. Run the frontend
+
+```bash
+cd web
+npm install
+npm run dev
 ```
