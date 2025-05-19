@@ -3,6 +3,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 /* 2. Remove default margin */
@@ -22,6 +24,12 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* 6. Improve media defaults */
