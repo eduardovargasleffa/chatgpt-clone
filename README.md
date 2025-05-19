@@ -44,7 +44,7 @@ cd chatgpt-clone
 cd server
 npm install
 cp .env.example .env
-node --watch src/server
+npm run start
 ```
 
 ### 3. Run the frontend
