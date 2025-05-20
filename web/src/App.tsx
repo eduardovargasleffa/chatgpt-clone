@@ -12,10 +12,10 @@ function App() {
     }
   ])
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const { data } = await makeRequest({ prompt: input })
-
+    const response = await makeRequest({ prompt: input })
+    console.log(response)
     setChatlog([
       ...chatlog,
       {
@@ -24,7 +24,7 @@ function App() {
       },
       {
         user: 'gpt',
-        message: data.split('\n').map((line: string) => <p>{line}</p>)
+        message: response.data.split('\n').map((line: string) => <p>{line}</p>)
       }
     ])
 
@@ -44,6 +44,8 @@ function App() {
           <form onSubmit={handleSubmit}>
             <input
               className='chat-input-textarea'
+              type='text'
+              name='text'
               value={input}
               onChange={e => setInput(e.target.value)}
             />
